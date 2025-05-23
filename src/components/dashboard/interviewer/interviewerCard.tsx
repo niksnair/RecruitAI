@@ -28,7 +28,7 @@ const AUDIO_OPTIONS = [
   { label: "Bob (Male)", value: "/audio/Bob.wav" },
 ];
 
-const interviewerCard = ({ interviewer }: Props) => {
+function InterviewerCard({ interviewer }: Props) {
   const [open, setOpen] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -110,7 +110,7 @@ const interviewerCard = ({ interviewer }: Props) => {
             <Pencil
               size={18}
               className="text-blue-500 cursor-pointer"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 setShowEdit(true);
               }}
@@ -118,7 +118,7 @@ const interviewerCard = ({ interviewer }: Props) => {
             <Trash2
               size={18}
               className="text-red-500 cursor-pointer"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 setShowDeleteConfirm(true);
               }}
@@ -151,7 +151,7 @@ const interviewerCard = ({ interviewer }: Props) => {
               tabIndex={0}
               aria-label="Change Avatar"
               role="button"
-              onKeyDown={e => { if (e.key === "Enter" || e.key === " ") setGallery(true); }}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setGallery(true); }}
             >
               {editData.image ? (
                 <Image
@@ -175,7 +175,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                   type="text"
                   className="border-b-2 focus:outline-none border-gray-500 px-2 py-0.5 ml-3 w-[12.5rem]"
                   value={editData.name}
-                  onChange={e => handleEditChange("name", e.target.value)}
+                  onChange={(e) => handleEditChange("name", e.target.value)}
                   aria-label="Interviewer Name"
                 />
               </div>
@@ -188,7 +188,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                       value={[editData.empathy]}
                       max={1}
                       step={0.1}
-                      onValueChange={value => handleEditChange("empathy", value[0])}
+                      onValueChange={(value) => handleEditChange("empathy", value[0])}
                     />
                     <span className="w-8 text-left">{editData.empathy}</span>
                   </div>
@@ -200,7 +200,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                       value={[editData.rapport]}
                       max={1}
                       step={0.1}
-                      onValueChange={value => handleEditChange("rapport", value[0])}
+                      onValueChange={(value) => handleEditChange("rapport", value[0])}
                     />
                     <span className="w-8 text-left">{editData.rapport}</span>
                   </div>
@@ -212,7 +212,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                       value={[editData.exploration]}
                       max={1}
                       step={0.1}
-                      onValueChange={value => handleEditChange("exploration", value[0])}
+                      onValueChange={(value) => handleEditChange("exploration", value[0])}
                     />
                     <span className="w-8 text-left">{editData.exploration}</span>
                   </div>
@@ -224,7 +224,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                       value={[editData.speed]}
                       max={1}
                       step={0.1}
-                      onValueChange={value => handleEditChange("speed", value[0])}
+                      onValueChange={(value) => handleEditChange("speed", value[0])}
                     />
                     <span className="w-8 text-left">{editData.speed}</span>
                   </div>
@@ -234,14 +234,14 @@ const interviewerCard = ({ interviewer }: Props) => {
                   <select
                     className="border-b-2 focus:outline-none border-gray-500 px-2 py-0.5 ml-3 w-[12.5rem]"
                     value={editData.audio}
-                    onChange={e => {
+                    onChange={(e) => {
                       handleEditChange("audio", e.target.value);
                       setAudioPreview(e.target.value);
                     }}
                     aria-label="Audio Voice"
                   >
                     <option value="">Select Audio</option>
-                    {AUDIO_OPTIONS.map(opt => (
+                    {AUDIO_OPTIONS.map((opt) => (
                       <option key={opt.value} value={opt.value}>{opt.label}</option>
                     ))}
                   </select>
@@ -249,7 +249,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                     <button
                       className="ml-2 px-2 py-1 bg-gray-200 rounded"
                       aria-label="Play Audio Preview"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.preventDefault();
                         setAudioPreview(editData.audio);
                         setTimeout(() => {
@@ -268,7 +268,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                     type="text"
                     className="border-b-2 focus:outline-none border-gray-500 px-2 py-0.5 ml-3 w-[12.5rem]"
                     value={editData.description}
-                    onChange={e => handleEditChange("description", e.target.value)}
+                    onChange={(e) => handleEditChange("description", e.target.value)}
                   />
                 </div>
               </div>
@@ -307,7 +307,7 @@ const interviewerCard = ({ interviewer }: Props) => {
                     tabIndex={0}
                     aria-label={`Select avatar ${item.id}`}
                     role="button"
-                    onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { handleEditChange("image", item.img); setGallery(false); } }}
+                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { handleEditChange("image", item.img); setGallery(false); } }}
                   >
                     <Image alt="avatar" width={125} height={100} src={item.img} />
                   </div>
@@ -348,6 +348,6 @@ const interviewerCard = ({ interviewer }: Props) => {
       </Modal>
     </>
   );
-};
+}
 
-export default interviewerCard;
+export default InterviewerCard;
