@@ -143,15 +143,23 @@ function InterviewerCard({ interviewer }: Props) {
       >
         <div className="text-center w-[35rem]">
           <h2 className="text-2xl font-semibold mb-4" tabIndex={0}>Edit Interviewer</h2>
-          {error && <div className="text-red-500 mb-2" role="alert">{error}</div>}
+          {error && (
+            <div className="text-red-500 mb-2" role="alert">
+              {error}
+            </div>
+          )}
           <div className="mt-3 p-2 flex flex-row justify-center space-x-10 items-center">
             <div
               className="flex flex-col items-center justify-center overflow-hidden border-4 border-gray-500 rounded-xl h-56 w-52 cursor-pointer"
-              onClick={() => setGallery(true)}
               tabIndex={0}
               aria-label="Change Avatar"
               role="button"
-              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setGallery(true); }}
+              onClick={() => setGallery(true)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setGallery(true);
+                }
+              }}
             >
               {editData.image ? (
                 <Image
@@ -175,8 +183,8 @@ function InterviewerCard({ interviewer }: Props) {
                   type="text"
                   className="border-b-2 focus:outline-none border-gray-500 px-2 py-0.5 ml-3 w-[12.5rem]"
                   value={editData.name}
-                  onChange={(e) => handleEditChange("name", e.target.value)}
                   aria-label="Interviewer Name"
+                  onChange={(e) => handleEditChange("name", e.target.value)}
                 />
               </div>
               <h3 className="text-lg mt-3 font-medium">Interviewer Settings</h3>
@@ -234,11 +242,11 @@ function InterviewerCard({ interviewer }: Props) {
                   <select
                     className="border-b-2 focus:outline-none border-gray-500 px-2 py-0.5 ml-3 w-[12.5rem]"
                     value={editData.audio}
+                    aria-label="Audio Voice"
                     onChange={(e) => {
                       handleEditChange("audio", e.target.value);
                       setAudioPreview(e.target.value);
                     }}
-                    aria-label="Audio Voice"
                   >
                     <option value="">Select Audio</option>
                     {AUDIO_OPTIONS.map((opt) => (
@@ -276,8 +284,8 @@ function InterviewerCard({ interviewer }: Props) {
           </div>
           <div className="flex flex-row justify-end mr-4 mt-4">
             <Button
-              disabled={isSaving}
               className="bg-indigo-600 hover:bg-indigo-800"
+              disabled={isSaving}
               onClick={handleEditSave}
             >
               {isSaving ? "Saving..." : "Save"}
@@ -287,8 +295,8 @@ function InterviewerCard({ interviewer }: Props) {
         <Modal
           open={gallery}
           closeOnOutsideClick={true}
-          onClose={() => setGallery(false)}
           aria-label="Avatar Picker Modal"
+          onClose={() => setGallery(false)}
         >
           <div className="text-left w-[20rem]">
             <CardTitle className="text-xl text mt-0 p-0 font-semibold " tabIndex={0}>
@@ -300,14 +308,19 @@ function InterviewerCard({ interviewer }: Props) {
                   <div
                     key={item.id}
                     className={`flex flex-col items-center justify-center border-2 border-gray-500 rounded-xl overflow-hidden m-2 cursor-pointer ${editData.image === item.img ? 'ring-2 ring-indigo-500' : ''}`}
+                    tabIndex={0}
+                    aria-label={`Select avatar ${item.id}`}
+                    role="button"
                     onClick={() => {
                       handleEditChange("image", item.img);
                       setGallery(false);
                     }}
-                    tabIndex={0}
-                    aria-label={`Select avatar ${item.id}`}
-                    role="button"
-                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { handleEditChange("image", item.img); setGallery(false); } }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        handleEditChange("image", item.img);
+                        setGallery(false);
+                      }
+                    }}
                   >
                     <Image alt="avatar" width={125} height={100} src={item.img} />
                   </div>
@@ -319,8 +332,8 @@ function InterviewerCard({ interviewer }: Props) {
         <Modal
           open={showDeleteConfirm}
           closeOnOutsideClick={true}
-          onClose={() => setShowDeleteConfirm(false)}
           aria-label="Delete Confirmation Modal"
+          onClose={() => setShowDeleteConfirm(false)}
         >
           <div className="p-6 text-center">
             <h2 className="text-xl font-semibold mb-4" tabIndex={0}>Confirm Deletion</h2>
@@ -328,17 +341,17 @@ function InterviewerCard({ interviewer }: Props) {
             <div className="flex flex-row justify-center gap-4 mt-6">
               <Button
                 variant="destructive"
-                onClick={handleDelete}
-                disabled={deleting}
                 aria-label="Confirm Delete"
+                disabled={deleting}
+                onClick={handleDelete}
               >
                 {deleting ? "Deleting..." : "Delete"}
               </Button>
               <Button
                 variant="outline"
-                onClick={() => setShowDeleteConfirm(false)}
-                disabled={deleting}
                 aria-label="Cancel Delete"
+                disabled={deleting}
+                onClick={() => setShowDeleteConfirm(false)}
               >
                 Cancel
               </Button>
