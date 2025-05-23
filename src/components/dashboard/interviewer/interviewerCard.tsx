@@ -286,8 +286,8 @@ function InterviewerCard({ interviewer }: Props) {
                     type="text"
                     className="border-b-2 focus:outline-none border-gray-300 px-2 py-0.5 ml-3 w-[12.5rem] bg-gray-100 text-gray-600"
                     value={interviewer.agent_id || ''}
-                    readOnly
                     aria-label="Retell Agent ID"
+                    readOnly
                   />
                 </div>
               </div>
@@ -296,8 +296,8 @@ function InterviewerCard({ interviewer }: Props) {
           <div className="flex flex-row justify-end mr-4 mt-4">
             <Button
               className="bg-indigo-600 hover:bg-indigo-800"
-              disabled={isSaving}
               onClick={handleEditSave}
+              disabled={isSaving}
             >
               {isSaving ? "Saving..." : "Save"}
             </Button>
@@ -354,16 +354,16 @@ function InterviewerCard({ interviewer }: Props) {
             <Button
               variant="destructive"
               aria-label="Confirm Delete"
-              disabled={deleting}
               onClick={handleDelete}
+              disabled={deleting}
             >
               {deleting ? "Deleting..." : "Delete"}
             </Button>
             <Button
               variant="outline"
               aria-label="Cancel Delete"
-              disabled={deleting}
               onClick={() => setShowDeleteConfirm(false)}
+              disabled={deleting}
             >
               Cancel
             </Button>
