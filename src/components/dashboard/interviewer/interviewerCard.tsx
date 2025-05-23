@@ -138,8 +138,8 @@ function InterviewerCard({ interviewer }: Props) {
       <Modal
         open={showEdit}
         closeOnOutsideClick={true}
-        onClose={() => setShowEdit(false)}
         aria-label="Edit Interviewer Modal"
+        onClose={() => setShowEdit(false)}
       >
         <div className="text-center w-[35rem]">
           <h2 className="text-2xl font-semibold mb-4" tabIndex={0}>Edit Interviewer</h2>
