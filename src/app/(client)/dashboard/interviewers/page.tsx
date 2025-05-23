@@ -5,7 +5,7 @@ import React from "react";
 import { ChevronLeft } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import InterviewerCard from "@/components/dashboard/interviewer/interviewerCard";
-import CreateInterviewerButton from "@/components/dashboard/interviewer/createInterviewerButton";
+import CreateInterviewerCard from "@/components/dashboard/interviewer/createInterviewerCard";
 
 function Interviewers() {
   const { interviewers, interviewersLoading } = useInterviewers();
@@ -54,7 +54,7 @@ function Interviewers() {
             id="slider"
             className=" h-44 pt-2 overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide w-[40rem]"
           >
-            {interviewers.length === 0 ? <CreateInterviewerButton /> : <></>}
+            <CreateInterviewerCard />
             {!interviewersLoading ? (
               <>
                 {interviewers.map((interviewer) => (

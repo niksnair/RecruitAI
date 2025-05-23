@@ -111,6 +111,7 @@ function InterviewerCard({ interviewer }: Props) {
               className="text-blue-500 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
+                setShowDeleteConfirm(false);
                 setShowEdit(true);
               }}
             />
@@ -119,6 +120,7 @@ function InterviewerCard({ interviewer }: Props) {
               className="text-red-500 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
+                setShowEdit(false);
                 setShowDeleteConfirm(true);
               }}
             />
