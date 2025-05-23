@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { useInterviewers } from "@/contexts/interviewers.context";
 import { avatars } from "./avatars";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Dialog, DialogContent, DialogTitle, DialogActions } from "@/components/ui/dialog";
 
 interface Props {
   interviewer: Interviewer;

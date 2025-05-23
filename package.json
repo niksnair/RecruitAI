@@ -78,7 +78,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^22.15.21",
     "@types/react": "^18",
     "@types/react-color": "^3.0.12",
     "@types/react-dom": "^18",
