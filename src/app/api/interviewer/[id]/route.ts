@@ -17,16 +17,14 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
       
       return NextResponse.json({ error: "Failed to update interviewer" }, { status: 500 });
     }
-    // If name, description, or audio changed, update Retell agent
+    // If name or audio changed, update Retell agent
     if (
       (body.name && body.name !== current.name) ||
-      (body.description && body.description !== current.description) ||
       (body.audio && body.audio !== current.audio)
     ) {
       try {
         await retellClient.agent.update(current.agent_id, {
           agent_name: body.name || current.name,
-          description: body.description || current.description,
           audio: body.audio || current.audio,
         });
       } catch (err) {
