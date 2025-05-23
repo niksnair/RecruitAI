@@ -75,8 +75,40 @@ const getInterviewer = async (interviewerId: bigint) => {
   return interviewerData;
 };
 
+const updateInterviewer = async (id: number | bigint, payload: any) => {
+  const { error, data } = await supabase
+    .from("interviewer")
+    .update({ ...payload })
+    .eq("id", id)
+    .select();
+
+  if (error) {
+    console.error("Error updating interviewer:", error);
+    return null;
+  }
+
+  return data;
+};
+
+const deleteInterviewer = async (id: number | bigint) => {
+  const { error, data } = await supabase
+    .from("interviewer")
+    .delete()
+    .eq("id", id)
+    .select();
+
+  if (error) {
+    console.error("Error deleting interviewer:", error);
+    return null;
+  }
+
+  return data;
+};
+
 export const InterviewerService = {
   getAllInterviewers,
   createInterviewer,
   getInterviewer,
+  updateInterviewer,
+  deleteInterviewer,
 };

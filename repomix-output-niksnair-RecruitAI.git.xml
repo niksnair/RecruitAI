@@ -1,0 +1,2973 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where comments have been removed, empty lines have been removed, line numbers have been added, content has been compressed (code blocks are separated by ⋮---- delimiter), security check has been disabled.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Code comments have been removed from supported file types
+- Empty lines have been removed from all files
+- Line numbers have been added to the beginning of each line
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Security check has been disabled - content may contain sensitive information
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+.github/
+  workflows/
+    Issue_Template/
+      1-Bug_Report.md
+      2-Questions.md
+    ci.yml
+src/
+  actions/
+    parse-pdf.ts
+  app/
+    (client)/
+      dashboard/
+        interviewers/
+          page.tsx
+        page.tsx
+      interviews/
+        [interviewId]/
+          page.tsx
+      sign-in/
+        [[...sign-in]]/
+          page.tsx
+      sign-up/
+        [[...sign-up]]/
+          page.tsx
+      layout.tsx
+    (user)/
+      call/
+        [interviewId]/
+          page.tsx
+      layout.tsx
+    api/
+      analyze-communication/
+        route.ts
+      create-interview/
+        route.ts
+      create-interviewer/
+        route.ts
+      generate-insights/
+        route.ts
+      generate-interview-questions/
+        route.ts
+      get-call/
+        route.ts
+      register-call/
+        route.ts
+      response-webhook/
+        route.ts
+    globals.css
+  components/
+    call/
+      callInfo.tsx
+      feedbackForm.tsx
+      index.tsx
+      tabSwitchPrevention.tsx
+    dashboard/
+      interview/
+        create-popup/
+          details.tsx
+          questionCard.tsx
+          questions.tsx
+        createInterviewCard.tsx
+        createInterviewModal.tsx
+        dataTable.tsx
+        editInterview.tsx
+        fileUpload.tsx
+        interviewCard.tsx
+        questionAnswerCard.tsx
+        sharePopup.tsx
+        summaryInfo.tsx
+      interviewer/
+        avatars.ts
+        createInterviewerButton.tsx
+        createInterviewerCard.tsx
+        interviewerCard.tsx
+        interviewerDetailsModal.tsx
+      Modal.tsx
+    loaders/
+      loader-with-logo/
+        loader.module.css
+        loaderWithLogo.tsx
+      loader-with-text/
+        loaderWithText.tsx
+      mini-loader/
+        mini-loader.module.css
+        miniLoader.tsx
+    ui/
+      alert-dialog.tsx
+      avatar.tsx
+      button.tsx
+      card.tsx
+      carousel.tsx
+      context-menu.tsx
+      form.tsx
+      label.tsx
+      scroll-area.tsx
+      select.tsx
+      separator.tsx
+      skeleton.tsx
+      slider.tsx
+      switch.tsx
+      table.tsx
+      tabs.tsx
+      textarea.tsx
+      toast.tsx
+      toaster.tsx
+      toggle.tsx
+      tooltip.tsx
+      use-toast.ts
+    navbar.tsx
+    providers.tsx
+    sideMenu.tsx
+  contexts/
+    clients.context.tsx
+    interviewers.context.tsx
+    interviews.context.tsx
+    responses.context.tsx
+  lib/
+    prompts/
+      analytics.ts
+      communication-analysis.ts
+      generate-insights.ts
+      generate-questions.ts
+    compose.tsx
+    constants.ts
+    enum.tsx
+    logger.ts
+    utils.ts
+  services/
+    analytics.service.ts
+    clients.service.ts
+    feedback.service.ts
+    interviewers.service.ts
+    interviews.service.ts
+    responses.service.ts
+  types/
+    database.types.ts
+    interview.ts
+    interviewer.ts
+    organization.ts
+    response.ts
+    user.ts
+  middleware.ts
+.env.example
+.eslintrc.js
+.gitignore
+components.json
+CONTRIBUTING.md
+docker-compose.yml
+Dockerfile
+LICENSE
+next.config.js
+package.json
+postcss.config.js
+README.md
+supabase_schema.sql
+tailwind.config.ts
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".github/workflows/Issue_Template/1-Bug_Report.md">
+---
+name: Bug report
+about: Report a technical issue. 🐞
+labels: "bug"
+---
+
+<!-- Please fill out this template to help us diagnose the issue. -->
+
+## Summary
+
+<!--- A brief description of the bug. -->
+
+## Expected Behavior
+
+<!--- What should have happened? -->
+
+## Current Behavior
+
+<!--- What actually happened? -->
+
+## Steps to Reproduce
+
+<!--- Steps to reproduce the issue. Please include code snippets if relevant. -->
+
+1.
+2.
+3.
+4.
+
+## Screenshots/Logs (if applicable)
+
+<!--- Add screenshots, error messages, or logs to help us understand the issue. -->
+
+## Possible Solution (Optional)
+
+<!--- Suggest a reason for the bug or potential fix. -->
+
+## Context
+
+<!--- How has this issue affected you? What are you trying to accomplish? -->
+
+## Your Environment
+
+- **Operating System & Version:**
+- **Software Version:** (e.g., Node.js, Python, etc.)
+</file>
+
+<file path=".github/workflows/Issue_Template/2-Questions.md">
+---
+name: Question
+about: Ask a question.❓
+labels: "question"
+---
+
+## Summary
+
+<!-- What do you need help with? -->
+
+-->
+</file>
+
+<file path=".github/workflows/ci.yml">
+name: CI
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+jobs:
+  ci-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: yarn install
+      - name: Run Prettier
+        run: npx prettier --check .
+</file>
+
+<file path="src/actions/parse-pdf.ts">
+import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+export async function parsePdf(formData: FormData)
+</file>
+
+<file path="src/app/(client)/dashboard/interviewers/page.tsx">
+import { useInterviewers } from "@/contexts/interviewers.context";
+import React from "react";
+import { ChevronLeft } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import InterviewerCard from "@/components/dashboard/interviewer/interviewerCard";
+import CreateInterviewerButton from "@/components/dashboard/interviewer/createInterviewerButton";
+⋮----
+const slideLeft = () =>
+const slideRight = () =>
+</file>
+
+<file path="src/app/(client)/dashboard/page.tsx">
+import React, { useState, useEffect } from "react";
+import { useOrganization } from "@clerk/nextjs";
+import InterviewCard from "@/components/dashboard/interview/interviewCard";
+import CreateInterviewCard from "@/components/dashboard/interview/createInterviewCard";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { InterviewService } from "@/services/interviews.service";
+import { ClientService } from "@/services/clients.service";
+import { ResponseService } from "@/services/responses.service";
+import { useInterviews } from "@/contexts/interviews.context";
+import Modal from "@/components/dashboard/Modal";
+import { Gem, Plus } from "lucide-react";
+import Image from "next/image";
+⋮----
+const fetchOrganizationData = async () =>
+⋮----
+const fetchResponsesCount = async () =>
+⋮----
+You cannot create any more interviews unless you upgrade
+</file>
+
+<file path="src/app/(client)/interviews/[interviewId]/page.tsx">
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import React, { useState, useEffect } from "react";
+import { useOrganization } from "@clerk/nextjs";
+import { useInterviews } from "@/contexts/interviews.context";
+import { Share2, Filter, Pencil, UserIcon, Eye, Palette } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { useRouter } from "next/navigation";
+import { ResponseService } from "@/services/responses.service";
+import { ClientService } from "@/services/clients.service";
+import { Interview } from "@/types/interview";
+import { Response } from "@/types/response";
+import { formatTimestampToDateHHMM } from "@/lib/utils";
+import CallInfo from "@/components/call/callInfo";
+import SummaryInfo from "@/components/dashboard/interview/summaryInfo";
+import { InterviewService } from "@/services/interviews.service";
+import EditInterview from "@/components/dashboard/interview/editInterview";
+import Modal from "@/components/dashboard/Modal";
+import { toast } from "sonner";
+import { ChromePicker } from "react-color";
+import SharePopup from "@/components/dashboard/interview/sharePopup";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { CandidateStatus } from "@/lib/enum";
+import LoaderWithText from "@/components/loaders/loader-with-text/loaderWithText";
+interface Props {
+  params: {
+    interviewId: string;
+  };
+  searchParams: {
+    call: string;
+    edit: boolean;
+  };
+}
+⋮----
+const seeInterviewPreviewPage = () =>
+⋮----
+const fetchInterview = async () =>
+⋮----
+const fetchOrganizationData = async () =>
+⋮----
+const fetchResponses = async () =>
+⋮----
+const handleDeleteResponse = (deletedCallId: string) =>
+const handleResponseClick = async (response: Response) =>
+const handleToggle = async () =>
+const handleThemeColorChange = async (newColor: string) =>
+const handleCandidateStatusChange = (callId: string, newStatus: string) =>
+const openSharePopup = () =>
+const closeSharePopup = () =>
+const handleColorChange = (color: any) =>
+const applyColorChange = () =>
+const filterResponses = () =>
+⋮----
+onValueChange=
+</file>
+
+<file path="src/app/(client)/sign-in/[[...sign-in]]/page.tsx">
+import { SignIn } from "@clerk/nextjs";
+function SignInPage()
+</file>
+
+<file path="src/app/(client)/sign-up/[[...sign-up]]/page.tsx">
+import { SignUp } from "@clerk/nextjs";
+function SignUpPage()
+</file>
+
+<file path="src/app/(client)/layout.tsx">
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+import Navbar from "@/components/navbar";
+import Providers from "@/components/providers";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner";
+import SideMenu from "@/components/sideMenu";
+import { usePathname } from "next/navigation";
+</file>
+
+<file path="src/app/(user)/call/[interviewId]/page.tsx">
+import { useInterviews } from "@/contexts/interviews.context";
+import { useEffect, useState } from "react";
+import Call from "@/components/call";
+import Image from "next/image";
+import { ArrowUpRightSquareIcon } from "lucide-react";
+import { Interview } from "@/types/interview";
+import LoaderWithText from "@/components/loaders/loader-with-text/loaderWithText";
+type Props = {
+  params: {
+    interviewId: string;
+  };
+};
+type PopupProps = {
+  title: string;
+  description: string;
+  image: string;
+};
+function PopupLoader()
+function PopUpMessage(
+⋮----
+const fetchinterview = async () =>
+</file>
+
+<file path="src/app/(user)/layout.tsx">
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+⋮----
+import { ClerkProvider } from "@clerk/nextjs";
+import Providers from "@/components/providers";
+import { Toaster } from "sonner";
+⋮----
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+})
+</file>
+
+<file path="src/app/api/analyze-communication/route.ts">
+import { OpenAI } from "openai";
+import { NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
+import {
+  SYSTEM_PROMPT,
+  getCommunicationAnalysisPrompt,
+} from "@/lib/prompts/communication-analysis";
+export async function POST(req: Request)
+</file>
+
+<file path="src/app/api/create-interview/route.ts">
+import { nanoid } from "nanoid";
+import { NextResponse } from "next/server";
+import { InterviewService } from "@/services/interviews.service";
+import { logger } from "@/lib/logger";
+⋮----
+export async function POST(req: Request, res: Response)
+</file>
+
+<file path="src/app/api/create-interviewer/route.ts">
+import { logger } from "@/lib/logger";
+import { InterviewerService } from "@/services/interviewers.service";
+import { NextResponse, NextRequest } from "next/server";
+import Retell from "retell-sdk";
+import { INTERVIEWERS, RETELL_AGENT_GENERAL_PROMPT } from "@/lib/constants";
+⋮----
+export async function GET(res: NextRequest)
+</file>
+
+<file path="src/app/api/generate-insights/route.ts">
+import { OpenAI } from "openai";
+import { NextResponse } from "next/server";
+import { ResponseService } from "@/services/responses.service";
+import { InterviewService } from "@/services/interviews.service";
+import {
+  SYSTEM_PROMPT,
+  createUserPrompt,
+} from "@/lib/prompts/generate-insights";
+import { logger } from "@/lib/logger";
+export async function POST(req: Request, res: Response)
+</file>
+
+<file path="src/app/api/generate-interview-questions/route.ts">
+import { OpenAI } from "openai";
+import { NextResponse } from "next/server";
+import {
+  SYSTEM_PROMPT,
+  generateQuestionsPrompt,
+} from "@/lib/prompts/generate-questions";
+import { logger } from "@/lib/logger";
+⋮----
+export async function POST(req: Request, res: Response)
+</file>
+
+<file path="src/app/api/get-call/route.ts">
+import { logger } from "@/lib/logger";
+import { generateInterviewAnalytics } from "@/services/analytics.service";
+import { ResponseService } from "@/services/responses.service";
+import { Response } from "@/types/response";
+import { NextResponse } from "next/server";
+import Retell from "retell-sdk";
+⋮----
+export async function POST(req: Request, res: Response)
+</file>
+
+<file path="src/app/api/register-call/route.ts">
+import { logger } from "@/lib/logger";
+import { InterviewerService } from "@/services/interviewers.service";
+import { NextResponse } from "next/server";
+import Retell from "retell-sdk";
+⋮----
+export async function POST(req: Request, res: Response)
+</file>
+
+<file path="src/app/api/response-webhook/route.ts">
+import axios from "axios";
+import { NextRequest, NextResponse } from "next/server";
+import { Retell } from "retell-sdk";
+⋮----
+export async function POST(req: NextRequest, res: NextResponse)
+</file>
+
+<file path="src/app/globals.css">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+⋮----
+* {
+⋮----
+@apply border-border;
+⋮----
+body {
+⋮----
+:root {
+.dark {
+⋮----
+.cl-logoImage {
+</file>
+
+<file path="src/components/call/callInfo.tsx">
+import React, { useEffect, useState } from "react";
+import { Analytics, CallData } from "@/types/response";
+import axios from "axios";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import ReactAudioPlayer from "react-audio-player";
+import { DownloadIcon, TrashIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { ResponseService } from "@/services/responses.service";
+import { useRouter } from "next/navigation";
+import LoaderWithText from "@/components/loaders/loader-with-text/loaderWithText";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
+import { CircularProgress } from "@nextui-org/react";
+import QuestionAnswerCard from "@/components/dashboard/interview/questionAnswerCard";
+import { marked } from "marked";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { CandidateStatus } from "@/lib/enum";
+import { ArrowLeft } from "lucide-react";
+type CallProps = {
+  call_id: string;
+  onDeleteResponse: (deletedCallId: string) => void;
+  onCandidateStatusChange: (callId: string, newStatus: string) => void;
+};
+⋮----
+const fetchResponses = async () =>
+⋮----
+const fetchEmail = async () =>
+⋮----
+const replaceAgentAndUser = (transcript: string, name: string): string =>
+⋮----
+const onDeleteResponseClick = async () =>
+⋮----
+onValueChange=
+</file>
+
+<file path="src/components/call/feedbackForm.tsx">
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { FeedbackData } from "@/types/response";
+enum SatisfactionLevel {
+  Positive = "😀",
+  Moderate = "😐",
+  Negative = "😔",
+}
+interface FeedbackFormProps {
+  onSubmit: (data: Omit<FeedbackData, "interview_id">) => void;
+  email: string;
+}
+⋮----
+const handleSubmit = () =>
+</file>
+
+<file path="src/components/call/index.tsx">
+import {
+  ArrowUpRightSquareIcon,
+  AlarmClockIcon,
+  XCircleIcon,
+  CheckCircleIcon,
+} from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
+import { useResponses } from "@/contexts/responses.context";
+import Image from "next/image";
+import axios from "axios";
+import { RetellWebClient } from "retell-client-js-sdk";
+import MiniLoader from "../loaders/mini-loader/miniLoader";
+import { toast } from "sonner";
+import { isLightColor, testEmail } from "@/lib/utils";
+import { ResponseService } from "@/services/responses.service";
+import { Interview } from "@/types/interview";
+import { FeedbackData } from "@/types/response";
+import { FeedbackService } from "@/services/feedback.service";
+import { FeedbackForm } from "@/components/call/feedbackForm";
+import {
+  TabSwitchWarning,
+  useTabSwitchPrevention,
+} from "./tabSwitchPrevention";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { InterviewerService } from "@/services/interviewers.service";
+⋮----
+type InterviewProps = {
+  interview: Interview;
+};
+type registerCallResponseType = {
+  data: {
+    registerCallResponse: {
+      call_id: string;
+      access_token: string;
+    };
+  };
+};
+type transcriptType = {
+  role: string;
+  content: string;
+};
+⋮----
+const handleFeedbackSubmit = async (
+    formData: Omit<FeedbackData, "interview_id">,
+) =>
+⋮----
+const onEndCallClick = async () =>
+const startConversation = async () =>
+⋮----
+const fetchInterviewer = async () =>
+⋮----
+const updateInterview = async () =>
+⋮----
+onClick=
+</file>
+
+<file path="src/components/call/tabSwitchPrevention.tsx">
+import React, { useEffect, useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+const useTabSwitchPrevention = () =>
+⋮----
+const handleVisibilityChange = () =>
+⋮----
+const handleUnderstand = () =>
+⋮----
+function TabSwitchWarning()
+</file>
+
+<file path="src/components/dashboard/interview/create-popup/details.tsx">
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import { useInterviewers } from "@/contexts/interviewers.context";
+import { InterviewBase, Question } from "@/types/interview";
+import { ChevronRight, ChevronLeft, Info } from "lucide-react";
+import Image from "next/image";
+import { CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import FileUpload from "../fileUpload";
+import Modal from "@/components/dashboard/Modal";
+import InterviewerDetailsModal from "@/components/dashboard/interviewer/interviewerDetailsModal";
+import { Interviewer } from "@/types/interviewer";
+interface Props {
+  open: boolean;
+  setLoading: (loading: boolean) => void;
+  interviewData: InterviewBase;
+  setInterviewData: (interviewData: InterviewBase) => void;
+  isUploaded: boolean;
+  setIsUploaded: (isUploaded: boolean) => void;
+  fileName: string;
+  setFileName: (fileName: string) => void;
+}
+⋮----
+const slideLeft = (id: string, value: number) =>
+const slideRight = (id: string, value: number) =>
+const onGenrateQuestions = async () =>
+const onManual = () =>
+⋮----
+onChange=
+onBlur=
+</file>
+
+<file path="src/components/dashboard/interview/create-popup/questionCard.tsx">
+import { Question } from "@/types/interview";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+interface QuestionCardProps {
+  questionNumber: number;
+  questionData: Question;
+  onQuestionChange: (id: string, question: Question) => void;
+  onDelete: (id: string) => void;
+}
+</file>
+
+<file path="src/components/dashboard/interview/create-popup/questions.tsx">
+import { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import { useClerk, useOrganization } from "@clerk/nextjs";
+import { InterviewBase, Question } from "@/types/interview";
+import { useInterviews } from "@/contexts/interviews.context";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import QuestionCard from "@/components/dashboard/interview/create-popup/questionCard";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
+interface Props {
+  interviewData: InterviewBase;
+  setProceed: (proceed: boolean) => void;
+  setOpen: (open: boolean) => void;
+}
+⋮----
+const handleInputChange = (id: string, newQuestion: Question) =>
+const handleDeleteQuestion = (id: string) =>
+const handleAddQuestion = () =>
+const onSave = async () =>
+⋮----
+// Convert BigInts to strings if necessary
+</file>
+
+<file path="src/components/dashboard/interview/createInterviewCard.tsx">
+import React, { useState } from "react";
+import { Plus } from "lucide-react";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import CreateInterviewModal from "@/components/dashboard/interview/createInterviewModal";
+import Modal from "@/components/dashboard/Modal";
+</file>
+
+<file path="src/components/dashboard/interview/createInterviewModal.tsx">
+import React, { useEffect, useState } from "react";
+import LoaderWithLogo from "@/components/loaders/loader-with-logo/loaderWithLogo";
+import DetailsPopup from "@/components/dashboard/interview/create-popup/details";
+import QuestionsPopup from "@/components/dashboard/interview/create-popup/questions";
+import { InterviewBase } from "@/types/interview";
+interface Props {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}
+const CreateEmptyInterviewData = (): InterviewBase => (
+⋮----
+// Below for File Upload
+⋮----
+// eslint-disable-next-line react-hooks/exhaustive-deps
+⋮----
+// Below for File Upload
+⋮----
+// eslint-disable-next-line react-hooks/exhaustive-deps
+</file>
+
+<file path="src/components/dashboard/interview/dataTable.tsx">
+import React, { useState, useCallback, useRef } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getSortedRowModel,
+  SortingState,
+  useReactTable,
+} from "@tanstack/react-table";
+import { Button } from "@/components/ui/button";
+import { ArrowUpDown, ExternalLink } from "lucide-react";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
+export type TableData = {
+  call_id: string;
+  name: string;
+  overallScore: number;
+  communicationScore: number;
+  callSummary: string;
+};
+interface DataTableProps {
+  data: TableData[];
+  interviewId: string;
+}
+⋮----
+const customSortingFn = (a: any, b: any) =>
+⋮----
+</file>
+
+<file path="src/components/dashboard/interview/editInterview.tsx">
+import { Interview, Question } from "@/types/interview";
+import React, { useEffect, useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { Plus, SaveIcon, TrashIcon } from "lucide-react";
+import { useInterviewers } from "@/contexts/interviewers.context";
+import QuestionCard from "@/components/dashboard/interview/create-popup/questionCard";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { useInterviews } from "@/contexts/interviews.context";
+import { InterviewService } from "@/services/interviews.service";
+import { CardTitle } from "../../ui/card";
+import Image from "next/image";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+type EditInterviewProps = {
+  interview: Interview | undefined;
+};
+⋮----
+const handleInputChange = (id: string, newQuestion: Question) =>
+const handleDeleteQuestion = (id: string) =>
+const handleAddQuestion = () =>
+const onSave = async () =>
+const onDeleteInterviewClick = async () =>
+⋮----
+onClick=
+</file>
+
+<file path="src/components/dashboard/interview/fileUpload.tsx">
+import { toast } from "sonner";
+import { Inbox } from "lucide-react";
+import { useState } from "react";
+import { useDropzone } from "react-dropzone";
+import { parsePdf } from "@/actions/parse-pdf";
+type Props = {
+  isUploaded: boolean;
+  setIsUploaded: (isUploaded: boolean) => void;
+  fileName: string;
+  setFileName: (fileName: string) => void;
+  setUploadedDocumentContext: (context: string) => void;
+};
+</file>
+
+<file path="src/components/dashboard/interview/interviewCard.tsx">
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Copy, ArrowUpRight } from "lucide-react";
+import { CopyCheck } from "lucide-react";
+import { ResponseService } from "@/services/responses.service";
+import axios from "axios";
+import MiniLoader from "@/components/loaders/mini-loader/miniLoader";
+import { InterviewerService } from "@/services/interviewers.service";
+interface Props {
+  name: string | null;
+  interviewerId: bigint;
+  id: string;
+  url: string;
+  readableSlug: string;
+}
+⋮----
+const fetchInterviewer = async () =>
+⋮----
+// eslint-disable-next-line react-hooks/exhaustive-deps
+⋮----
+const fetchResponses = async () =>
+⋮----
+const copyToClipboard = () =>
+const handleJumpToInterview = (event: React.MouseEvent) =>
+⋮----
+
+⋮----
+event.stopPropagation();
+event.preventDefault();
+copyToClipboard();
+</file>
+
+<file path="src/components/dashboard/interview/questionAnswerCard.tsx">
+import { CardTitle } from "@/components/ui/card";
+interface QuestionCardProps {
+  questionNumber: number;
+  question: string;
+  answer: string;
+}
+function QuestionAnswerCard({
+  questionNumber,
+  question,
+  answer,
+}: QuestionCardProps)
+</file>
+
+<file path="src/components/dashboard/interview/sharePopup.tsx">
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Copy } from "lucide-react";
+import { toast } from "sonner";
+import Modal from "@/components/dashboard/Modal";
+interface SharePopupProps {
+  open: boolean;
+  onClose: () => void;
+  shareContent: string;
+}
+function SharePopup(
+⋮----
+const copyLinkToClipboard = () =>
+const copyEmbedToClipboard = () =>
+⋮----
+onBlur=
+</file>
+
+<file path="src/components/dashboard/interview/summaryInfo.tsx">
+import { Interview } from "@/types/interview";
+import { Interviewer } from "@/types/interviewer";
+import { Response } from "@/types/response";
+import React, { useEffect, useState } from "react";
+import { UserCircleIcon, SmileIcon, Info } from "lucide-react";
+import { useInterviewers } from "@/contexts/interviewers.context";
+import { PieChart } from "@mui/x-charts/PieChart";
+import { CandidateStatus } from "@/lib/enum";
+import { convertSecondstoMMSS } from "@/lib/utils";
+import Image from "next/image";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
+import DataTable, {
+  TableData,
+} from "@/components/dashboard/interview/dataTable";
+import { ScrollArea } from "@/components/ui/scroll-area";
+type SummaryProps = {
+  responses: Response[];
+  interview: Interview | undefined;
+};
+function InfoTooltip(
+⋮----
+const prepareTableData = (responses: Response[]): TableData[] =>
+</file>
+
+<file path="src/components/dashboard/interviewer/avatars.ts">
+
+</file>
+
+<file path="src/components/dashboard/interviewer/createInterviewerButton.tsx">
+import { Card, CardContent } from "@/components/ui/card";
+import { InterviewerService } from "@/services/interviewers.service";
+import axios from "axios";
+import { Plus, Loader2 } from "lucide-react";
+import { useState } from "react";
+⋮----
+const createInterviewers = async () =>
+</file>
+
+<file path="src/components/dashboard/interviewer/createInterviewerCard.tsx">
+import React from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Image as LucideImage } from "lucide-react";
+import { Plus } from "lucide-react";
+import { CardTitle } from "@/components/ui/card";
+import Modal from "@/components/dashboard/Modal";
+import { Slider } from "@/components/ui/slider";
+import { Button } from "@/components/ui/button";
+import { avatars } from "@/components/dashboard/interviewer/avatars";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { useInterviewers } from "@/contexts/interviewers.context";
+import { useClerk } from "@clerk/nextjs";
+⋮----
+const onSave = async () =>
+⋮----
+onChange=
+⋮----
+onValueChange=
+</file>
+
+<file path="src/components/dashboard/interviewer/interviewerCard.tsx">
+import { useState } from "react";
+import Image from "next/image";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import Modal from "@/components/dashboard/Modal";
+import { Interviewer } from "@/types/interviewer";
+import InterviewerDetailsModal from "@/components/dashboard/interviewer/interviewerDetailsModal";
+interface Props {
+  interviewer: Interviewer;
+}
+const interviewerCard = (
+⋮----
+setOpen(false);
+</file>
+
+<file path="src/components/dashboard/interviewer/interviewerDetailsModal.tsx">
+import Image from "next/image";
+import { CardTitle } from "@/components/ui/card";
+import { Slider } from "@/components/ui/slider";
+import ReactAudioPlayer from "react-audio-player";
+import { Interviewer } from "@/types/interviewer";
+interface Props {
+  interviewer: Interviewer | undefined;
+}
+</file>
+
+<file path="src/components/dashboard/Modal.tsx">
+import { ReactNode } from "react";
+import { X } from "lucide-react";
+interface ModalProps {
+  open: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  closeOnOutsideClick?: boolean;
+}
+export default function Modal({
+  open,
+  onClose,
+  closeOnOutsideClick = true,
+  children,
+}: ModalProps)
+⋮----
+onClick=
+</file>
+
+<file path="src/components/loaders/loader-with-logo/loader.module.css">
+.loader {
+</file>
+
+<file path="src/components/loaders/loader-with-logo/loaderWithLogo.tsx">
+import styles from "./loader.module.css";
+import Image from "next/image";
+function LoaderWithLogo()
+</file>
+
+<file path="src/components/loaders/loader-with-text/loaderWithText.tsx">
+import { CircularProgress } from "@nextui-org/progress";
+</file>
+
+<file path="src/components/loaders/mini-loader/mini-loader.module.css">
+.loader {
+</file>
+
+<file path="src/components/loaders/mini-loader/miniLoader.tsx">
+import styles from "./mini-loader.module.css";
+function MiniLoader()
+</file>
+
+<file path="src/components/ui/alert-dialog.tsx">
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+</file>
+
+<file path="src/components/ui/avatar.tsx">
+import { cn } from "@/lib/utils";
+</file>
+
+<file path="src/components/ui/button.tsx">
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+⋮----
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+</file>
+
+<file path="src/components/ui/card.tsx">
+import { cn } from "@/lib/utils";
+⋮----
+className=
+⋮----
+<div ref=
+</file>
+
+<file path="src/components/ui/carousel.tsx">
+import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from "embla-carousel-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+type CarouselApi = UseEmblaCarouselType[1];
+type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
+type CarouselOptions = UseCarouselParameters[0];
+type CarouselPlugin = UseCarouselParameters[1];
+type CarouselProps = {
+  opts?: CarouselOptions;
+  plugins?: CarouselPlugin;
+  orientation?: "horizontal" | "vertical";
+  setApi?: (api: CarouselApi) => void;
+};
+type CarouselContextProps = {
+  carouselRef: ReturnType<typeof useEmblaCarousel>[0];
+  api: ReturnType<typeof useEmblaCarousel>[1];
+  scrollPrev: () => void;
+  scrollNext: () => void;
+  canScrollPrev: boolean;
+  canScrollNext: boolean;
+} & CarouselProps;
+⋮----
+function useCarousel()
+</file>
+
+<file path="src/components/ui/context-menu.tsx">
+import {
+  CheckIcon,
+  ChevronRightIcon,
+  DotFilledIcon,
+} from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
+⋮----
+className=
+</file>
+
+<file path="src/components/ui/form.tsx">
+import { Slot } from "@radix-ui/react-slot";
+import {
+  Controller,
+  ControllerProps,
+  FieldPath,
+  FieldValues,
+  FormProvider,
+  useFormContext,
+} from "react-hook-form";
+import { cn } from "@/lib/utils";
+import { Label } from "@/components/ui/label";
+⋮----
+type FormFieldContextValue<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+> = {
+  name: TName;
+};
+⋮----
+function FormField<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+>(
+const useFormField = () =>
+type FormItemContextValue = {
+  id: string;
+};
+⋮----
+<div ref=
+⋮----
+className=
+</file>
+
+<file path="src/components/ui/label.tsx">
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+</file>
+
+<file path="src/components/ui/scroll-area.tsx">
+import { cn } from "@/lib/utils";
+⋮----
+className=
+</file>
+
+<file path="src/components/ui/select.tsx">
+import {
+  CaretSortIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@radix-ui/react-icons";
+⋮----
+import { cn } from "@/lib/utils";
+⋮----
+className=
+</file>
+
+<file path="src/components/ui/separator.tsx">
+import { cn } from "@/lib/utils";
+</file>
+
+<file path="src/components/ui/skeleton.tsx">
+import React from "react";
+import { cn } from "@/lib/utils";
+⋮----
+className={cn("animate-pulse rounded-md bg-primary/10", className)}
+      {...props}
+    />
+  );
+</file>
+
+<file path="src/components/ui/slider.tsx">
+import { cn } from "@/lib/utils";
+⋮----
+className=
+</file>
+
+<file path="src/components/ui/switch.tsx">
+import { cn } from "@/lib/utils";
+⋮----
+className=
+</file>
+
+<file path="src/components/ui/table.tsx">
+import { cn } from "@/lib/utils";
+⋮----
+className=
+⋮----
+<thead ref=
+</file>
+
+<file path="src/components/ui/tabs.tsx">
+import { cn } from "@/lib/utils";
+</file>
+
+<file path="src/components/ui/textarea.tsx">
+import { cn } from "@/lib/utils";
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+</file>
+
+<file path="src/components/ui/toast.tsx">
+import { Cross2Icon } from "@radix-ui/react-icons";
+⋮----
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+⋮----
+className={cn(toastVariants({ variant }), className)}
+      {...props}
+    />
+  );
+⋮----
+type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;
+type ToastActionElement = React.ReactElement<typeof ToastAction>;
+</file>
+
+<file path="src/components/ui/toaster.tsx">
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
+</file>
+
+<file path="src/components/ui/toggle.tsx">
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+</file>
+
+<file path="src/components/ui/tooltip.tsx">
+import { cn } from "@/lib/utils";
+⋮----
+type TooltipProps = React.ComponentPropsWithoutRef<
+  typeof TooltipPrimitive.Root
+>;
+function Tooltip(props: TooltipProps)
+</file>
+
+<file path="src/components/ui/use-toast.ts">
+import type { ToastActionElement, ToastProps } from "@/components/ui/toast";
+⋮----
+type ToasterToast = ToastProps & {
+  id: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  action?: ToastActionElement;
+};
+⋮----
+function genId()
+type ActionType = typeof actionTypes;
+type Action =
+  | {
+      type: ActionType["ADD_TOAST"];
+      toast: ToasterToast;
+    }
+  | {
+      type: ActionType["UPDATE_TOAST"];
+      toast: Partial<ToasterToast>;
+    }
+  | {
+      type: ActionType["DISMISS_TOAST"];
+      toastId?: ToasterToast["id"];
+    }
+  | {
+      type: ActionType["REMOVE_TOAST"];
+      toastId?: ToasterToast["id"];
+    };
+interface State {
+  toasts: ToasterToast[];
+}
+⋮----
+const addToRemoveQueue = (toastId: string) =>
+export const reducer = (state: State, action: Action): State =>
+⋮----
+function dispatch(action: Action)
+type Toast = Omit<ToasterToast, "id">;
+function toast(
+⋮----
+const update = (props: ToasterToast)
+const dismiss = () => dispatch(
+⋮----
+function useToast()
+</file>
+
+<file path="src/components/navbar.tsx">
+import Link from "next/link";
+import React from "react";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
+</file>
+
+<file path="src/components/providers.tsx">
+import React from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { type ThemeProviderProps } from "next-themes/dist/types";
+import compose from "@/lib/compose";
+import { InterviewerProvider } from "@/contexts/interviewers.context";
+import { InterviewProvider } from "@/contexts/interviews.context";
+import { ResponseProvider } from "@/contexts/responses.context";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ClientProvider } from "@/contexts/clients.context";
+⋮----
+const providers = (
+</file>
+
+<file path="src/components/sideMenu.tsx">
+import React from "react";
+import { PlayCircleIcon, SpeechIcon } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+function SideMenu()
+⋮----
+onClick=
+</file>
+
+<file path="src/contexts/clients.context.tsx">
+import React, { useState, useContext, ReactNode, useEffect } from "react";
+import { User } from "@/types/user";
+import { useClerk, useOrganization } from "@clerk/nextjs";
+import { ClientService } from "@/services/clients.service";
+interface ClientContextProps {
+  client?: User;
+}
+⋮----
+interface ClientProviderProps {
+  children: ReactNode;
+}
+export function ClientProvider(
+⋮----
+const fetchClient = async () =>
+const fetchOrganization = async () =>
+⋮----
+export const useClient = () =>
+</file>
+
+<file path="src/contexts/interviewers.context.tsx">
+import React, { useState, useContext, ReactNode, useEffect } from "react";
+import { Interviewer } from "@/types/interviewer";
+import { InterviewerService } from "@/services/interviewers.service";
+import { useClerk } from "@clerk/nextjs";
+interface InterviewerContextProps {
+  interviewers: Interviewer[];
+  setInterviewers: React.Dispatch<React.SetStateAction<Interviewer[]>>;
+  createInterviewer: (payload: any) => void;
+  interviewersLoading: boolean;
+  setInterviewersLoading: (interviewersLoading: boolean) => void;
+}
+⋮----
+interface InterviewerProviderProps {
+  children: ReactNode;
+}
+export function InterviewerProvider(
+⋮----
+const fetchInterviewers = async () =>
+const createInterviewer = async (payload: any) =>
+⋮----
+export const useInterviewers = () =>
+</file>
+
+<file path="src/contexts/interviews.context.tsx">
+import React, { useState, useContext, ReactNode, useEffect } from "react";
+import { Interview } from "@/types/interview";
+import { InterviewService } from "@/services/interviews.service";
+import { useClerk, useOrganization } from "@clerk/nextjs";
+interface InterviewContextProps {
+  interviews: Interview[];
+  setInterviews: React.Dispatch<React.SetStateAction<Interview[]>>;
+  getInterviewById: (interviewId: string) => Interview | null | any;
+  interviewsLoading: boolean;
+  setInterviewsLoading: (interviewsLoading: boolean) => void;
+  fetchInterviews: () => void;
+}
+⋮----
+interface InterviewProviderProps {
+  children: ReactNode;
+}
+export function InterviewProvider(
+⋮----
+const fetchInterviews = async () =>
+const getInterviewById = async (interviewId: string) =>
+⋮----
+export const useInterviews = () =>
+</file>
+
+<file path="src/contexts/responses.context.tsx">
+import { ResponseService } from "@/services/responses.service";
+import React, { useContext } from "react";
+interface Response {
+  createResponse: (payload: any) => void;
+  saveResponse: (payload: any, call_id: string) => void;
+}
+⋮----
+interface ResponseProviderProps {
+  children: React.ReactNode;
+}
+export function ResponseProvider(
+⋮----
+const createResponse = async (payload: any) =>
+const saveResponse = async (payload: any, call_id: string) =>
+⋮----
+export const useResponses = () =>
+</file>
+
+<file path="src/lib/prompts/analytics.ts">
+export const getInterviewAnalyticsPrompt = (
+</file>
+
+<file path="src/lib/prompts/communication-analysis.ts">
+export const getCommunicationAnalysisPrompt = (
+</file>
+
+<file path="src/lib/prompts/generate-insights.ts">
+export const createUserPrompt = (
+  callSummaries: string,
+  interviewName: string,
+  interviewObjective: string,
+  interviewDescription: string,
+) =>
+</file>
+
+<file path="src/lib/prompts/generate-questions.ts">
+export const generateQuestionsPrompt = (body:
+</file>
+
+<file path="src/lib/compose.tsx">
+import React from "react";
+const compose = (providers: any[])
+</file>
+
+<file path="src/lib/constants.ts">
+
+</file>
+
+<file path="src/lib/enum.tsx">
+export enum CandidateStatus {
+  NO_STATUS = "NO_STATUS",
+  NOT_SELECTED = "NOT_SELECTED",
+  POTENTIAL = "POTENTIAL",
+  SELECTED = "SELECTED",
+}
+</file>
+
+<file path="src/lib/logger.ts">
+type LogLevel = "info" | "warn" | "error";
+class Logger
+⋮----
+private logWithLevel(
+    level: LogLevel,
+    message: string,
+    args?: string | object | "",
+)
+⋮----
+// eslint-disable-next-line no-console
+⋮----
+info(message: string, args?: string | object)
+warn(message: string, args?: string | object)
+error(message: string, args?: string | object)
+</file>
+
+<file path="src/lib/utils.ts">
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+export function cn(...inputs: ClassValue[])
+export function convertToAscii(inputString: string)
+export function formatTimestampToDateHHMM(timestamp: string): string
+⋮----
+// Format date to YYYY-MM-DD
+⋮----
+export function testEmail(email: string)
+export function convertSecondstoMMSS(seconds: number)
+export function isLightColor(color: string)
+</file>
+
+<file path="src/services/analytics.service.ts">
+import { OpenAI } from "openai";
+import { ResponseService } from "@/services/responses.service";
+import { InterviewService } from "@/services/interviews.service";
+import { Question } from "@/types/interview";
+import { Analytics } from "@/types/response";
+import {
+  getInterviewAnalyticsPrompt,
+  SYSTEM_PROMPT,
+} from "@/lib/prompts/analytics";
+export const generateInterviewAnalytics = async (payload: {
+  callId: string;
+  interviewId: string;
+  transcript: string;
+}) =>
+</file>
+
+<file path="src/services/clients.service.ts">
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+⋮----
+const updateOrganization = async (payload: any, id: string) =>
+const getClientById = async (
+  id: string,
+  email?: string | null,
+  organization_id?: string | null,
+) =>
+const getOrganizationById = async (
+  organization_id?: string,
+  organization_name?: string,
+) =>
+</file>
+
+<file path="src/services/feedback.service.ts">
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { FeedbackData } from "@/types/response";
+⋮----
+const submitFeedback = async (feedbackData: FeedbackData) =>
+</file>
+
+<file path="src/services/interviewers.service.ts">
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+⋮----
+const getAllInterviewers = async (clientId: string = "") =>
+const createInterviewer = async (payload: any) =>
+const getInterviewer = async (interviewerId: bigint) =>
+</file>
+
+<file path="src/services/interviews.service.ts">
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+⋮----
+const getAllInterviews = async (userId: string, organizationId: string) =>
+const getInterviewById = async (id: string) =>
+const updateInterview = async (payload: any, id: string) =>
+const deleteInterview = async (id: string) =>
+const getAllRespondents = async (interviewId: string) =>
+const createInterview = async (payload: any) =>
+const deactivateInterviewsByOrgId = async (organizationId: string) =>
+</file>
+
+<file path="src/services/responses.service.ts">
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+⋮----
+const createResponse = async (payload: any) =>
+const saveResponse = async (payload: any, call_id: string) =>
+const getAllResponses = async (interviewId: string) =>
+const getResponseCountByOrganizationId = async (
+  organizationId: string,
+): Promise<number> =>
+const getAllEmailAddressesForInterview = async (interviewId: string) =>
+const getResponseByCallId = async (id: string) =>
+const deleteResponse = async (id: string) =>
+const updateResponse = async (payload: any, call_id: string) =>
+</file>
+
+<file path="src/types/database.types.ts">
+export type Json =
+  | string
+  | number
+  | boolean
+  | null
+  | { [key: string]: Json | undefined }
+  | Json[];
+export type Database = {
+  public: {
+    Tables: {
+      feedback: {
+        Row: {
+          created_at: string;
+          email: string | null;
+          feedback: string | null;
+          id: number;
+          interview_id: string | null;
+          satisfaction: number | null;
+        };
+        Insert: {
+          created_at?: string;
+          email?: string | null;
+          feedback?: string | null;
+          id?: number;
+          interview_id?: string | null;
+          satisfaction?: number | null;
+        };
+        Update: {
+          created_at?: string;
+          email?: string | null;
+          feedback?: string | null;
+          id?: number;
+          interview_id?: string | null;
+          satisfaction?: number | null;
+        };
+        Relationships: [];
+      };
+      interview: {
+        Row: {
+          created_at: string;
+          description: string | null;
+          id: string;
+          insights: string[] | null;
+          interviewer_id: number | null;
+          is_active: boolean;
+          is_anonymous: boolean;
+          is_archived: boolean;
+          logo_url: string | null;
+          name: string | null;
+          objective: string | null;
+          organization_id: string | null;
+          question_count: number | null;
+          questions: Json | null;
+          quotes: Json[] | null;
+          readable_slug: string | null;
+          respondents: string[] | null;
+          response_count: number | null;
+          theme_color: string | null;
+          time_duration: string | null;
+          url: string | null;
+          user_id: string | null;
+        };
+        Insert: {
+          created_at?: string;
+          description?: string | null;
+          id: string;
+          insights?: string[] | null;
+          interviewer_id?: number | null;
+          is_active?: boolean;
+          is_anonymous?: boolean;
+          is_archived?: boolean;
+          logo_url?: string | null;
+          name?: string | null;
+          objective?: string | null;
+          organization_id?: string | null;
+          question_count?: number | null;
+          questions?: Json | null;
+          quotes?: Json[] | null;
+          readable_slug?: string | null;
+          respondents?: string[] | null;
+          response_count?: number | null;
+          theme_color?: string | null;
+          time_duration?: string | null;
+          url?: string | null;
+          user_id?: string | null;
+        };
+        Update: {
+          created_at?: string;
+          description?: string | null;
+          id?: string;
+          insights?: string[] | null;
+          interviewer_id?: number | null;
+          is_active?: boolean;
+          is_anonymous?: boolean;
+          is_archived?: boolean;
+          logo_url?: string | null;
+          name?: string | null;
+          objective?: string | null;
+          organization_id?: string | null;
+          question_count?: number | null;
+          questions?: Json | null;
+          quotes?: Json[] | null;
+          readable_slug?: string | null;
+          respondents?: string[] | null;
+          response_count?: number | null;
+          theme_color?: string | null;
+          time_duration?: string | null;
+          url?: string | null;
+          user_id?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "interviews_interviewer_id_fkey";
+            columns: ["interviewer_id"];
+            isOneToOne: false;
+            referencedRelation: "interviewer";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      interviewer: {
+        Row: {
+          agent_id: string;
+          audio: string | null;
+          created_at: string;
+          description: string;
+          empathy: number;
+          exploration: number;
+          id: number;
+          image: string;
+          name: string;
+          rapport: number;
+          speed: number;
+        };
+        Insert: {
+          agent_id?: string;
+          audio?: string | null;
+          created_at?: string;
+          description?: string;
+          empathy?: number;
+          exploration?: number;
+          id?: number;
+          image?: string;
+          name?: string;
+          rapport?: number;
+          speed?: number;
+        };
+        Update: {
+          agent_id?: string;
+          audio?: string | null;
+          created_at?: string;
+          description?: string;
+          empathy?: number;
+          exploration?: number;
+          id?: number;
+          image?: string;
+          name?: string;
+          rapport?: number;
+          speed?: number;
+        };
+        Relationships: [];
+      };
+      organization: {
+        Row: {
+          allowed_responses_count: number | null;
+          created_at: string;
+          id: string;
+          image_url: string | null;
+          name: string | null;
+          plan: Database["public"]["Enums"]["plan"] | null;
+        };
+        Insert: {
+          allowed_responses_count?: number | null;
+          created_at?: string;
+          id: string;
+          image_url?: string | null;
+          name?: string | null;
+          plan?: Database["public"]["Enums"]["plan"] | null;
+        };
+        Update: {
+          allowed_responses_count?: number | null;
+          created_at?: string;
+          id?: string;
+          image_url?: string | null;
+          name?: string | null;
+          plan?: Database["public"]["Enums"]["plan"] | null;
+        };
+        Relationships: [];
+      };
+      response: {
+        Row: {
+          analytics: Json | null;
+          call_id: string | null;
+          candidate_status: string | null;
+          created_at: string;
+          details: Json | null;
+          duration: number | null;
+          email: string | null;
+          id: number;
+          interview_id: string | null;
+          is_analysed: boolean | null;
+          is_ended: boolean | null;
+          is_viewed: boolean | null;
+          name: string | null;
+          tab_switch_count: number | null;
+        };
+        Insert: {
+          analytics?: Json | null;
+          call_id?: string | null;
+          candidate_status?: string | null;
+          created_at?: string;
+          details?: Json | null;
+          duration?: number | null;
+          email?: string | null;
+          id?: number;
+          interview_id?: string | null;
+          is_analysed?: boolean | null;
+          is_ended?: boolean | null;
+          is_viewed?: boolean | null;
+          name?: string | null;
+          tab_switch_count?: number | null;
+        };
+        Update: {
+          analytics?: Json | null;
+          call_id?: string | null;
+          candidate_status?: string | null;
+          created_at?: string;
+          details?: Json | null;
+          duration?: number | null;
+          email?: string | null;
+          id?: number;
+          interview_id?: string | null;
+          is_analysed?: boolean | null;
+          is_ended?: boolean | null;
+          is_viewed?: boolean | null;
+          name?: string | null;
+          tab_switch_count?: number | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "response_interview_id_fkey";
+            columns: ["interview_id"];
+            isOneToOne: false;
+            referencedRelation: "interview";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      user: {
+        Row: {
+          created_at: string;
+          email: string | null;
+          id: string;
+          organization_id: string | null;
+        };
+        Insert: {
+          created_at?: string;
+          email?: string | null;
+          id: string;
+          organization_id?: string | null;
+        };
+        Update: {
+          created_at?: string;
+          email?: string | null;
+          id?: string;
+          organization_id?: string | null;
+        };
+        Relationships: [];
+      };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      binary_quantize:
+        | {
+            Args: {
+              "": string;
+            };
+            Returns: unknown;
+          }
+        | {
+            Args: {
+              "": unknown;
+            };
+            Returns: unknown;
+          };
+      halfvec_avg: {
+        Args: {
+          "": number[];
+        };
+        Returns: unknown;
+      };
+      halfvec_out: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      halfvec_send: {
+        Args: {
+          "": unknown;
+        };
+        Returns: string;
+      };
+      halfvec_typmod_in: {
+        Args: {
+          "": unknown[];
+        };
+        Returns: number;
+      };
+      hnsw_bit_support: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      hnsw_halfvec_support: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      hnsw_sparsevec_support: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      hnswhandler: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      ivfflat_bit_support: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      ivfflat_halfvec_support: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      ivfflathandler: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      l2_norm:
+        | {
+            Args: {
+              "": unknown;
+            };
+            Returns: number;
+          }
+        | {
+            Args: {
+              "": unknown;
+            };
+            Returns: number;
+          };
+      l2_normalize:
+        | {
+            Args: {
+              "": string;
+            };
+            Returns: string;
+          }
+        | {
+            Args: {
+              "": unknown;
+            };
+            Returns: unknown;
+          }
+        | {
+            Args: {
+              "": unknown;
+            };
+            Returns: unknown;
+          };
+      sparsevec_out: {
+        Args: {
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+      sparsevec_send: {
+        Args: {
+          "": unknown;
+        };
+        Returns: string;
+      };
+      sparsevec_typmod_in: {
+        Args: {
+          "": unknown[];
+        };
+        Returns: number;
+      };
+      vector_avg: {
+        Args: {
+          "": number[];
+        };
+        Returns: string;
+      };
+      vector_dims:
+        | {
+            Args: {
+              "": string;
+            };
+            Returns: number;
+          }
+        | {
+            Args: {
+              "": unknown;
+            };
+            Returns: number;
+          };
+      vector_norm: {
+        Args: {
+          "": string;
+        };
+        Returns: number;
+      };
+      vector_out: {
+        Args: {
+          "": string;
+        };
+        Returns: unknown;
+      };
+      vector_send: {
+        Args: {
+          "": string;
+        };
+        Returns: string;
+      };
+      vector_typmod_in: {
+        Args: {
+          "": unknown[];
+        };
+        Returns: number;
+      };
+    };
+    Enums: {
+      plan: "free" | "pro" | "free_trial_over";
+    };
+    CompositeTypes: {
+      [_ in never]: never;
+    };
+  };
+};
+type PublicSchema = Database[Extract<keyof Database, "public">];
+export type Tables<
+  PublicTableNameOrOptions extends
+    | keyof (PublicSchema["Tables"] & PublicSchema["Views"])
+    | { schema: keyof Database },
+  TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+    ? keyof (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
+        Database[PublicTableNameOrOptions["schema"]]["Views"])
+    : never = never,
+> = PublicTableNameOrOptions extends { schema: keyof Database }
+  ? (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
+      Database[PublicTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+      Row: infer R;
+    }
+    ? R
+    : never
+  : PublicTableNameOrOptions extends keyof (PublicSchema["Tables"] &
+        PublicSchema["Views"])
+    ? (PublicSchema["Tables"] &
+        PublicSchema["Views"])[PublicTableNameOrOptions] extends {
+        Row: infer R;
+      }
+      ? R
+      : never
+    : never;
+export type TablesInsert<
+  PublicTableNameOrOptions extends
+    | keyof PublicSchema["Tables"]
+    | { schema: keyof Database },
+  TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+    ? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+> = PublicTableNameOrOptions extends { schema: keyof Database }
+  ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+      Insert: infer I;
+    }
+    ? I
+    : never
+  : PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
+    ? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
+        Insert: infer I;
+      }
+      ? I
+      : never
+    : never;
+export type TablesUpdate<
+  PublicTableNameOrOptions extends
+    | keyof PublicSchema["Tables"]
+    | { schema: keyof Database },
+  TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+    ? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+> = PublicTableNameOrOptions extends { schema: keyof Database }
+  ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+      Update: infer U;
+    }
+    ? U
+    : never
+  : PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
+    ? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
+        Update: infer U;
+      }
+      ? U
+      : never
+    : never;
+export type Enums<
+  PublicEnumNameOrOptions extends
+    | keyof PublicSchema["Enums"]
+    | { schema: keyof Database },
+  EnumName extends PublicEnumNameOrOptions extends { schema: keyof Database }
+    ? keyof Database[PublicEnumNameOrOptions["schema"]]["Enums"]
+    : never = never,
+> = PublicEnumNameOrOptions extends { schema: keyof Database }
+  ? Database[PublicEnumNameOrOptions["schema"]]["Enums"][EnumName]
+  : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
+    ? PublicSchema["Enums"][PublicEnumNameOrOptions]
+    : never;
+export type CompositeTypes<
+  PublicCompositeTypeNameOrOptions extends
+    | keyof PublicSchema["CompositeTypes"]
+    | { schema: keyof Database },
+  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+    schema: keyof Database;
+  }
+    ? keyof Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    : never = never,
+> = PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
+  ? Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+  : PublicCompositeTypeNameOrOptions extends keyof PublicSchema["CompositeTypes"]
+    ? PublicSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
+    : never;
+</file>
+
+<file path="src/types/interview.ts">
+export interface Question {
+  id: string;
+  question: string;
+  follow_up_count: number;
+}
+export interface Quote {
+  quote: string;
+  call_id: string;
+}
+export interface InterviewBase {
+  user_id: string;
+  organization_id: string;
+  name: string;
+  interviewer_id: bigint;
+  objective: string;
+  question_count: number;
+  time_duration: string;
+  is_anonymous: boolean;
+  questions: Question[];
+  description: string;
+  response_count: bigint;
+}
+export interface InterviewDetails {
+  id: string;
+  created_at: Date;
+  url: string | null;
+  insights: string[];
+  quotes: Quote[];
+  details: any;
+  is_active: boolean;
+  theme_color: string;
+  logo_url: string;
+  respondents: string[];
+  readable_slug: string;
+}
+export interface Interview extends InterviewBase, InterviewDetails {}
+</file>
+
+<file path="src/types/interviewer.ts">
+export interface Interviewer {
+  id: bigint;
+  user_id: string;
+  created_at: Date;
+  name: string;
+  rapport: number;
+  exploration: number;
+  empathy: number;
+  speed: number;
+  image: string;
+  description: string;
+  audio: string;
+  agent_id: string;
+}
+</file>
+
+<file path="src/types/organization.ts">
+export interface Organization {
+  id: string;
+  created_at: Date;
+  image_url: string;
+  name: string;
+  plan: string;
+  allowed_responses_count: number;
+}
+</file>
+
+<file path="src/types/response.ts">
+export interface Response {
+  id: bigint;
+  created_at: Date;
+  name: string | null;
+  interview_id: string;
+  duration: number;
+  call_id: string;
+  details: any;
+  is_analysed: boolean;
+  email: string;
+  is_ended: boolean;
+  is_viewed: boolean;
+  analytics: any;
+  candidate_status: string;
+  tab_switch_count: number;
+}
+export interface Analytics {
+  overallScore: number;
+  overallFeedback: string;
+  communication: { score: number; feedback: string };
+  generalIntelligence: string;
+  softSkillSummary: string;
+  questionSummaries: Array<{
+    question: string;
+    summary: string;
+  }>;
+}
+export interface FeedbackData {
+  interview_id: string;
+  satisfaction: number | null;
+  feedback: string | null;
+  email: string | null;
+}
+export interface CallData {
+  call_id: string;
+  agent_id: string;
+  audio_websocket_protocol: string;
+  audio_encoding: string;
+  sample_rate: number;
+  call_status: string;
+  end_call_after_silence_ms: number;
+  from_number: string;
+  to_number: string;
+  metadata: Record<string, unknown>;
+  retell_llm_dynamic_variables: {
+    customer_name: string;
+  };
+  drop_call_if_machine_detected: boolean;
+  opt_out_sensitive_data_storage: boolean;
+  start_timestamp: number;
+  end_timestamp: number;
+  transcript: string;
+  transcript_object: {
+    role: "agent" | "user";
+    content: string;
+    words: {
+      word: string;
+      start: number;
+      end: number;
+    }[];
+  }[];
+  transcript_with_tool_calls: {
+    role: "agent" | "user";
+    content: string;
+    words: {
+      word: string;
+      start: number;
+      end: number;
+    }[];
+  }[];
+  recording_url: string;
+  public_log_url: string;
+  e2e_latency: {
+    p50: number;
+    p90: number;
+    p95: number;
+    p99: number;
+    max: number;
+    min: number;
+    num: number;
+  };
+  llm_latency: {
+    p50: number;
+    p90: number;
+    p95: number;
+    p99: number;
+    max: number;
+    min: number;
+    num: number;
+  };
+  llm_websocket_network_rtt_latency: {
+    p50: number;
+    p90: number;
+    p95: number;
+    p99: number;
+    max: number;
+    min: number;
+    num: number;
+  };
+  disconnection_reason: string;
+  call_analysis: {
+    call_summary: string;
+    user_sentiment: string;
+    agent_sentiment: string;
+    agent_task_completion_rating: string;
+    agent_task_completion_rating_reason: string;
+    call_completion_rating: string;
+    call_completion_rating_reason: string;
+  };
+}
+</file>
+
+<file path="src/types/user.ts">
+export interface User {
+  id: string;
+  created_at: Date;
+  user_id: string;
+  image_url: string;
+  organization_id: string;
+}
+</file>
+
+<file path="src/middleware.ts">
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+</file>
+
+<file path=".env.example">
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up 
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard 
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard 
+NEXT_PUBLIC_LIVE_URL=localhost:3000
+
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+
+# Retell AI
+RETELL_API_KEY=
+
+# OpenAI
+OPENAI_API_KEY=
+</file>
+
+<file path=".eslintrc.js">
+
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.idea/
+</file>
+
+<file path="components.json">
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/app/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  }
+}
+</file>
+
+<file path="CONTRIBUTING.md">
+# Contributing
+
+Thanks for considering contributing to FoloUp!
+
+## Opening issues
+
+If you find a bug, please feel free to [open an issue](https://github.com/FoloUp/FoloUp/issues).
+
+## Fixing bugs
+
+Here’s a quick guide:
+
+1. [Fork this repository](https://github.com/FoloUp/FoloUp/fork) and then clone it locally:
+
+```bash
+git clone https://github.com/FoloUp/FoloUp
+```
+
+2. Create a topic branch for your changes:
+
+```bash
+git checkout -b fix-for-that-thing
+```
+
+3. If everything looks good, push to your fork:
+
+```bash
+git push origin fix-for-that-thing
+```
+
+4. [Submit a pull request.](https://help.github.com/articles/creating-a-pull-request)
+
+## Adding new features
+
+Thinking of adding a new feature? [Open an issue](https://github.com/FoloUp/FoloUp/issues) and let’s design it together.
+</file>
+
+<file path="docker-compose.yml">
+services:
+  foloup:
+    build: .
+    ports:
+      - "${DOCKER_PORT:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+</file>
+
+<file path="Dockerfile">
+# Base on Node.js LTS image
+FROM node:23-alpine AS base
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies only when needed
+FROM base AS deps
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+# Build the application
+FROM base AS builder
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN yarn build
+
+# Production image, copy all files and run
+FROM base AS runner
+ENV NODE_ENV production
+
+# Add a non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+USER nextjs
+
+# Copy built app
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+
+# Expose the application port
+EXPOSE 3000
+
+# Start the application
+CMD ["yarn", "start"]
+</file>
+
+<file path="LICENSE">
+MIT License
+
+Copyright (c) 2025 FoloUp
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</file>
+
+<file path="next.config.js">
+async redirects() {
+⋮----
+webpack: (webpackConfig, { webpack }) => {
+webpackConfig.plugins.push(
+new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+resource.request = resource.request.replace(/^node:/, "");
+</file>
+
+<file path="package.json">
+{
+  "name": "foloup-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/clerk-js": "^4.65.5",
+    "@clerk/nextjs": "5.1.5",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@hookform/resolvers": "^3.3.2",
+    "@mui/material": "^5.15.20",
+    "@mui/x-charts": "^7.7.1",
+    "@nextui-org/progress": "^2.0.33",
+    "@nextui-org/react": "^2.4.6",
+    "@prisma/client": "^5.6.0",
+    "@radix-ui/react-alert-dialog": "^1.1.1",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-context-menu": "^2.1.5",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-progress": "^1.1.0",
+    "@radix-ui/react-scroll-area": "^1.0.5",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@radix-ui/react-toggle": "^1.0.3",
+    "@radix-ui/react-tooltip": "^1.1.2",
+    "@shadcn/ui": "^0.0.4",
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "@supabase/supabase-js": "^2.48.1",
+    "@tanstack/react-query": "^5.17.15",
+    "@tanstack/react-table": "^8.20.1",
+    "@types/md5": "^2.3.5",
+    "@types/pdf-parse": "^1.1.4",
+    "axios": "^1.6.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "embla-carousel-react": "^8.0.0-rc22",
+    "framer-motion": "^11.3.21",
+    "fs": "^0.0.1-security",
+    "init": "^0.1.2",
+    "langchain": "^0.1.4",
+    "lucide-react": "^0.294.0",
+    "marked": "^13.0.3",
+    "md5": "^2.3.0",
+    "nanoid": "^5.0.4",
+    "next": "^14.2.4",
+    "next-themes": "^0.2.1",
+    "openai": "^4.6.0",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18",
+    "react-audio-player": "^0.17.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.49.0",
+    "retell-client-js-sdk": "^2.0.0",
+    "retell-sdk": "^4.19.0",
+    "shadcn-ui": "^0.4.1",
+    "sharp": "^0.33.2",
+    "sonner": "^1.4.41",
+    "tailwind-merge": "^2.1.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^10.0.0",
+    "yarn": "^1.22.22",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-color": "^3.0.12",
+    "@types/react-dom": "^18",
+    "@types/regenerator-runtime": "^0.13.5",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "eslint-config-prettier": "^10.0.1",
+    "postcss": "^8",
+    "prisma": "^5.15.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  }
+}
+</file>
+
+<file path="postcss.config.js">
+
+</file>
+
+<file path="README.md">
+[![GitHub stars](https://img.shields.io/github/stars/FoloUp/FoloUp?style=social)](https://github.com/FoloUp/FoloUp/stargazers)
+![License](https://img.shields.io/github/license/foloup/foloup)
+[![Twitter Follow](https://img.shields.io/twitter/follow/SuveenE?style=social)](https://x.com/SuveenE)
+
+# FoloUp - AI-powered voice interviewer for hiring 💼
+
+FoloUp is an open source platform for companies to conduct AI powered hiring interviews with their candidates.
+
+<img src="https://github.com/user-attachments/assets/fa92ade1-02ea-4332-b5ed-97056dea01c3" alt="FoloUp Logo" width="800">
+
+<div style="display: flex; flex-direction: row; gap: 20px; margin: 20px 0;">
+  <picture>
+    <img src="https://github.com/user-attachments/assets/91adf737-6f62-4f48-ae68-58855bc38ccf" alt="Description 1" width="400" style="max-width: 100%;">
+  </picture>
+  <picture>
+    <img src="https://github.com/user-attachments/assets/91bbe5d5-1eff-4158-80d9-d98c2a53f59b" alt="Description 2" width="400" style="max-width: 100%;">
+  </picture>
+</div>
+
+## Key Features
+
+- **🎯 Interview Creation:** Instantly generate tailored interview questions from any job description.
+- **🔗 One-Click Sharing:** Generate and share unique interview links with candidates in seconds.
+- **🎙️ AI Voice Interviews:** Let our AI conduct natural, conversational interviews that adapt to candidate responses.
+- **📊 Smart Analysis:** Get detailed insights and scores for each interview response, powered by advanced AI.
+- **📈 Comprehensive Dashboard:** Track all candidate performances and overall stats.
+
+Here's a [loom](https://www.loom.com/share/762fd7d12001490bbfdcf3fac37ff173?sid=9a5b2a5a-64df-4c4c-a0e7-fc9765691f81) of me explaining the app.
+
+## Initial Setup
+
+1. Clone the project.
+
+```bash
+git clone https://github.com/FoloUp/FoloUp.git
+```
+
+2. Copy the existing environment template file
+
+```bash
+cp .env.example .env
+```
+
+## Clerk Setup ([Clerk](https://clerk.com/))
+
+We use Clerk for authentication. Set up Clerk environment variables in the `.env` file. Free plan should be more than enough.
+
+1. Navigate to [Clerk](https://dashboard.clerk.com/) and create an application following the [setup guide](https://clerk.com/docs/quickstarts/setup-clerk).
+
+<img src="https://github.com/user-attachments/assets/faa72830-10b0-4dfd-8f07-792e7520b6a2" alt="Clerk Environment Variables" width="800">
+
+2. Your `.env` (NOT `.env.local`) file should have the `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` variables populated with **no inverted commas**
+
+3. Enable organizations in your Clerk application by navigating to the [Organization Settings](https://dashboard.clerk.com/last-active?path=organizations-settings&_gl=1*58xbvk*_gcl_au*MTEzODk3NzAyMy4xNzM4NjQzMzU3*_ga*MzUyMTk4NzIwLjE3Mzg2NDM0NzY.*_ga_1WMF5X234K*MTczODczNzkxOC4zLjEuMTczODczNzkyNi4wLjAuMA..) page.
+
+<img src="https://github.com/user-attachments/assets/381cd138-439a-4b4f-ae87-50414fb1d64b" alt="Clerk Organization Settings" width="800">
+
+4. Make sure you create an organization and invite your email to it.
+
+## Database Setup ([Supabase](https://supabase.com/))
+
+Supabase is used for storing the data. It's really simple to set up and the free plan should suffice.
+
+1. Create a project (Note down your project's password)
+2. Got to SQL Editor and copy the SQL code from `supabase_schema.sql`
+
+<img src="https://github.com/user-attachments/assets/a31c14b8-45ca-417c-8927-aceb36fa5990" alt="Supabase SQL Editor" height="200">
+
+3. Run the SQL code to confirm the tables are created.
+4. Copy the supabase url and anon key from the project settings and paste it in the `.env` file in `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+## Retell AI Setup ([Retell AI](https://retell.ai/))
+
+We use Retell AI to manage all the voice calls. They manage storage of recordings and provide a simple SDK to integrate with. They provide free credits to start with and will have to pay as you go.
+
+1. Create an API key from [Retell AI Dashboard](https://dashboard.retellai.com/apiKey) and add it to the `.env` file in `RETELL_API_KEY`
+
+## Add OpenAI API Key
+
+We use OpenAI to generate questions for interviews and analyze responses. This would not be that costly.
+
+1. Go to [OpenAI](https://platform.openai.com/api-keys) and create an API key
+2. Add the API key to the `.env` file in `OPENAI_API_KEY`
+
+## Getting Started locally
+
+First install the packages:
+
+```bash
+yarn
+```
+
+Run the development server:
+
+```bash
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Self Hosting
+
+We recommend using [Vercel](https://vercel.com/) to host the app.
+
+## Contributing
+
+If you'd like to contribute to FoloUp, feel free to fork the repository, make your changes, and submit a pull request. Contributions are welcomed and appreciated.
+
+For a detailed guide on contributing, read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## Show Your Support 🌟
+
+If you find FoloUp helpful, please consider giving us a star on GitHub! It helps us reach more developers and continue improving the project.
+
+## Products built on top of FoloUp 🚀
+
+<div align="left">
+  <a href="https://talvin.ai/" target="_blank">
+    <img src="https://pbs.twimg.com/profile_images/1910041959508422656/OEnXp-kO_400x400.jpg" alt="Talvin AI Logo" height="100" style="border-radius: 20%;">
+    <p>Talvin AI</p>
+  </a>
+</div>
+
+## Contact
+
+If you have any questions or feedback, please feel free to reach out to us at [suveen.te1[at]gmail.com](mailto:suveen.te1@gmail.com).
+
+## License
+
+The software code is licensed under the MIT License.
+</file>
+
+<file path="supabase_schema.sql">
+CREATE TYPE plan AS ENUM ('free', 'pro', 'free_trial_over');
+CREATE TABLE organization (
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4(),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
+    name TEXT,
+    image_url TEXT,
+    allowed_responses_count INTEGER,
+    plan plan
+);
+CREATE TABLE "user" (
+    id TEXT PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
+    email TEXT,
+    organization_id TEXT REFERENCES organization(id)
+);
+CREATE TABLE interviewer (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
+    agent_id TEXT,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    image TEXT NOT NULL,
+    audio TEXT,
+    empathy INTEGER NOT NULL,
+    exploration INTEGER NOT NULL,
+    rapport INTEGER NOT NULL,
+    speed INTEGER NOT NULL
+);
+CREATE TABLE interview (
+    id TEXT PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
+    name TEXT,
+    description TEXT,
+    objective TEXT,
+    organization_id TEXT REFERENCES organization(id),
+    user_id TEXT REFERENCES "user"(id),
+    interviewer_id INTEGER REFERENCES interviewer(id),
+    is_active BOOLEAN DEFAULT true,
+    is_anonymous BOOLEAN DEFAULT false,
+    is_archived BOOLEAN DEFAULT false,
+    logo_url TEXT,
+    theme_color TEXT,
+    url TEXT,
+    readable_slug TEXT,
+    questions JSONB,
+    quotes JSONB[],
+    insights TEXT[],
+    respondents TEXT[],
+    question_count INTEGER,
+    response_count INTEGER,
+    time_duration TEXT
+);
+CREATE TABLE response (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
+    interview_id TEXT REFERENCES interview(id),
+    name TEXT,
+    email TEXT,
+    call_id TEXT,
+    candidate_status TEXT,
+    duration INTEGER,
+    details JSONB,
+    analytics JSONB,
+    is_analysed BOOLEAN DEFAULT false,
+    is_ended BOOLEAN DEFAULT false,
+    is_viewed BOOLEAN DEFAULT false,
+    tab_switch_count INTEGER
+);
+CREATE TABLE feedback (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
+    interview_id TEXT REFERENCES interview(id),
+    email TEXT,
+    feedback TEXT,
+    satisfaction INTEGER
+);
+</file>
+
+<file path="tailwind.config.ts">
+
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
+</file>
+
+</files>

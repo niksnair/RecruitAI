@@ -12,6 +12,15 @@ export async function GET(res: NextRequest) {
   logger.info("create-interviewer request received");
 
   try {
+    // Check if any interviewers already exist
+    const existingInterviewers = await InterviewerService.getAllInterviewers();
+    if (existingInterviewers && existingInterviewers.length > 0) {
+      return NextResponse.json(
+        { message: "Interviewers already exist. Skipping creation to prevent duplicates." },
+        { status: 200 },
+      );
+    }
+
     const newModel = await retellClient.llm.create({
       model: "gpt-4o",
       general_prompt: RETELL_AGENT_GENERAL_PROMPT,
