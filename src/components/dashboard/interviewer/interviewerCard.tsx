@@ -296,8 +296,8 @@ function InterviewerCard({ interviewer }: Props) {
           <div className="flex flex-row justify-end mr-4 mt-4">
             <Button
               className="bg-indigo-600 hover:bg-indigo-800"
-              onClick={handleEditSave}
               disabled={isSaving}
+              onClick={handleEditSave}
             >
               {isSaving ? "Saving..." : "Save"}
             </Button>
@@ -354,16 +354,16 @@ function InterviewerCard({ interviewer }: Props) {
             <Button
               variant="destructive"
               aria-label="Confirm Delete"
-              onClick={handleDelete}
               disabled={deleting}
+              onClick={handleDelete}
             >
               {deleting ? "Deleting..." : "Delete"}
             </Button>
             <Button
               variant="outline"
               aria-label="Cancel Delete"
-              onClick={() => setShowDeleteConfirm(false)}
               disabled={deleting}
+              onClick={() => setShowDeleteConfirm(false)}
             >
               Cancel
             </Button>
