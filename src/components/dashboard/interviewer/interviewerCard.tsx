@@ -280,6 +280,16 @@ function InterviewerCard({ interviewer }: Props) {
                     onChange={(e) => handleEditChange("description", e.target.value)}
                   />
                 </div>
+                <div className="flex flex-row justify-center items-center mt-2">
+                  <label className="text-sm font-medium w-32 text-left">Retell Agent ID:</label>
+                  <input
+                    type="text"
+                    className="border-b-2 focus:outline-none border-gray-300 px-2 py-0.5 ml-3 w-[12.5rem] bg-gray-100 text-gray-600"
+                    value={interviewer.agent_id || ''}
+                    readOnly
+                    aria-label="Retell Agent ID"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -330,35 +340,35 @@ function InterviewerCard({ interviewer }: Props) {
             </ScrollArea>
           </div>
         </Modal>
-        <Modal
-          open={showDeleteConfirm}
-          closeOnOutsideClick={true}
-          aria-label="Delete Confirmation Modal"
-          onClose={() => setShowDeleteConfirm(false)}
-        >
-          <div className="p-6 text-center">
-            <h2 className="text-xl font-semibold mb-4" tabIndex={0}>Confirm Deletion</h2>
-            <p>Are you sure you want to delete this interviewer?</p>
-            <div className="flex flex-row justify-center gap-4 mt-6">
-              <Button
-                variant="destructive"
-                aria-label="Confirm Delete"
-                disabled={deleting}
-                onClick={handleDelete}
-              >
-                {deleting ? "Deleting..." : "Delete"}
-              </Button>
-              <Button
-                variant="outline"
-                aria-label="Cancel Delete"
-                disabled={deleting}
-                onClick={() => setShowDeleteConfirm(false)}
-              >
-                Cancel
-              </Button>
-            </div>
+      </Modal>
+      <Modal
+        open={showDeleteConfirm}
+        closeOnOutsideClick={true}
+        aria-label="Delete Confirmation Modal"
+        onClose={() => setShowDeleteConfirm(false)}
+      >
+        <div className="p-6 text-center">
+          <h2 className="text-xl font-semibold mb-4" tabIndex={0}>Confirm Deletion</h2>
+          <p>Are you sure you want to delete this interviewer?</p>
+          <div className="flex flex-row justify-center gap-4 mt-6">
+            <Button
+              variant="destructive"
+              aria-label="Confirm Delete"
+              disabled={deleting}
+              onClick={handleDelete}
+            >
+              {deleting ? "Deleting..." : "Delete"}
+            </Button>
+            <Button
+              variant="outline"
+              aria-label="Cancel Delete"
+              disabled={deleting}
+              onClick={() => setShowDeleteConfirm(false)}
+            >
+              Cancel
+            </Button>
           </div>
-        </Modal>
+        </div>
       </Modal>
     </>
   );
