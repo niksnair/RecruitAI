@@ -8,7 +8,7 @@ const retellClient = new Retell({
 
 export async function PATCH(req: Request, { params }: { params: { id: string } }) {
   try {
-    const id = Number(params.id);
+    const id = BigInt(params.id);
     const body = await req.json();
     // Get the current interviewer to compare fields
     const current = await InterviewerService.getInterviewer(id);
@@ -44,7 +44,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {
   try {
-    const id = Number(params.id);
+    const id = BigInt(params.id);
     // Get the current interviewer to get agent_id
     const current = await InterviewerService.getInterviewer(id);
     const deleted = await InterviewerService.deleteInterviewer(id);
