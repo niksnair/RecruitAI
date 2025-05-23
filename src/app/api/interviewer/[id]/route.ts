@@ -14,6 +14,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
     const current = await InterviewerService.getInterviewer(id);
     const updated = await InterviewerService.updateInterviewer(id, body);
     if (!updated) {
+      
       return NextResponse.json({ error: "Failed to update interviewer" }, { status: 500 });
     }
     // If name, description, or audio changed, update Retell agent
@@ -33,8 +34,10 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
         console.error("Failed to update Retell agent", err);
       }
     }
+
     return NextResponse.json({ interviewer: updated }, { status: 200 });
   } catch (error) {
+
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
@@ -46,6 +49,7 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
     const current = await InterviewerService.getInterviewer(id);
     const deleted = await InterviewerService.deleteInterviewer(id);
     if (!deleted) {
+      
       return NextResponse.json({ error: "Failed to delete interviewer" }, { status: 500 });
     }
     // Delete the agent from Retell
@@ -57,8 +61,10 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
         console.error("Failed to delete Retell agent", err);
       }
     }
+
     return NextResponse.json({ interviewer: deleted }, { status: 200 });
   } catch (error) {
+
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 } 

@@ -84,6 +84,7 @@ const updateInterviewer = async (id: number | bigint, payload: any) => {
 
   if (error) {
     console.error("Error updating interviewer:", error);
+    
     return null;
   }
 
@@ -99,6 +100,7 @@ const deleteInterviewer = async (id: number | bigint) => {
 
   if (error) {
     console.error("Error deleting interviewer:", error);
+    
     return null;
   }
 
